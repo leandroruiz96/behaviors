@@ -1,4 +1,4 @@
-package com.github.leandroruiz96.behaviourstests;
+package com.github.leandroruiz96.behaviourstests.zoomleft;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

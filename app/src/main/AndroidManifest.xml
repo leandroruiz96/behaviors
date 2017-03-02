@@ -8,8 +8,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ScrollingActivity"
+
+        <activity android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -18,37 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".PotatoListActivity"
-            android:label="@string/title_potato_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".PotatoDetailActivity"
-            android:label="@string/title_potato_detail"
-            android:parentActivityName=".PotatoListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.github.leandroruiz96.behaviourstests.PotatoListActivity" />
-        </activity>
-        <activity
-            android:name=".PatataListActivity"
-            android:label="@string/title_patata_list"
-            android:parentActivityName=".PotatoListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.github.leandroruiz96.behaviourstests.PotatoListActivity" />
-        </activity>
-        <activity
-            android:name=".PatataDetailActivity"
-            android:label="@string/title_patata_detail"
-            android:parentActivityName=".PatataListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.github.leandroruiz96.behaviourstests.PatataListActivity" />
-        </activity>
+
+        <activity android:name=".zoomleft.ScrollingActivity" />
+
     </application>
 
 </manifest>
