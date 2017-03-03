@@ -1,4 +1,4 @@
-package com.github.leandroruiz96.behaviourstests;
+package com.github.leandroruiz96.behaviourstests.zoomleft;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.leandroruiz96.behaviourstests.R;
+
 public class ScrollingActivity extends AppCompatActivity {
+
+    public static final String DESCRIPTION = "Show FAB sliding and zooming out to left";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,6 @@ public class ScrollingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                Intent i =new Intent(ScrollingActivity.this,PotatoListActivity.class);
-                startActivity(i);
             }
         });
     }
