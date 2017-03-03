@@ -29,6 +29,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.github.leandroruiz96.behaviourstests.MainActivity" />
         </activity>
+        <activity
+            android:name=".tooltipview.TooltipActivity"
+            android:label="@string/title_activity_tooltip"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

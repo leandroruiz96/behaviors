@@ -95,4 +95,6 @@
     <string name="title_patata_list">Patatas</string>
     <string name="title_patata_detail">Patata Detail</string>
     <string name="title_activity_snack_fab">SnackFabActivity</string>
+    <string name="title_activity_tooltip">TooltipActivity</string>
+    <string name="scroll_for_more">Scroll for more</string>
 </resources>
