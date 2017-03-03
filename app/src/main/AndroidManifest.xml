@@ -8,18 +8,27 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".zoomleft.ScrollingActivity"
-            android:theme="@style/AppTheme.Collapsing"/>
-
+        <activity
+            android:name=".zoomleft.ScrollingActivity"
+            android:theme="@style/AppTheme.Collapsing" />
+        <activity
+            android:name=".snackfab.SnackFabActivity"
+            android:label="@string/title_activity_snack_fab"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.github.leandroruiz96.behaviourstests.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

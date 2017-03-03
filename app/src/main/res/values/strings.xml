@@ -94,4 +94,5 @@
     <string name="title_potato_detail">Potato Detail</string>
     <string name="title_patata_list">Patatas</string>
     <string name="title_patata_detail">Patata Detail</string>
+    <string name="title_activity_snack_fab">SnackFabActivity</string>
 </resources>
