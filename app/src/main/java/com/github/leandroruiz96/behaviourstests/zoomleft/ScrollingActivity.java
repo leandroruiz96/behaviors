@@ -14,6 +14,8 @@ import com.github.leandroruiz96.behaviourstests.R;
 
 public class ScrollingActivity extends AppCompatActivity {
 
+    public static final String DESCRIPTION = "Show FAB sliding and zooming out to left";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
