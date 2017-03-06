@@ -97,4 +97,7 @@
     <string name="title_activity_snack_fab">SnackFabActivity</string>
     <string name="title_activity_tooltip">TooltipActivity</string>
     <string name="scroll_for_more">Scroll for more</string>
+    <string name="title_activity_chained_fab">ChainedFabActivity</string>
+    <string name="title_activity_coord_pager">CoordPagerActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

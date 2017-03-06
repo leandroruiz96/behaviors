@@ -32,7 +32,25 @@
         <activity
             android:name=".tooltipview.TooltipActivity"
             android:label="@string/title_activity_tooltip"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".chainedfab.ChainedFabActivity"
+            android:label="@string/title_activity_chained_fab"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.github.leandroruiz96.behaviourstests.MainActivity" />
+        </activity>
+        <activity
+            android:name=".coordpager.CoordPagerActivity"
+            android:label="@string/title_activity_coord_pager"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.github.leandroruiz96.behaviourstests.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
