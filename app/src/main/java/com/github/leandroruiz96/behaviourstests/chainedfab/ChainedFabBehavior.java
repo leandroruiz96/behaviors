@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.view.ScrollingView;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -11,6 +12,9 @@ import android.view.View;
  * Created by leandro on 6/3/17.
  */
 public class ChainedFabBehavior extends CoordinatorLayout.Behavior<ChainedFab> {
+
+
+    private static final float THRESHOLD = 100f;
 
     public ChainedFabBehavior() {
         super();
@@ -22,7 +26,7 @@ public class ChainedFabBehavior extends CoordinatorLayout.Behavior<ChainedFab> {
 
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, ChainedFab child, View dependency) {
-        return dependency instanceof AppBarLayout || dependency.getId() == child.mLinkedFab;
+        return dependency instanceof AppBarLayout || dependency instanceof ScrollingView;
     }
 
     @Override
@@ -51,9 +55,14 @@ public class ChainedFabBehavior extends CoordinatorLayout.Behavior<ChainedFab> {
                 float deltaY = child.getHeight() + child.mChainedMargin;
                 child.setY(first.getY() - (deltaY*percent));
                 return true;
-            } else {
-                //I'm the first FAB
             }
+        }
+
+        if (dependency instanceof ScrollingView) {
+            ScrollingView scroll = (ScrollingView) dependency;
+            float scale = Math.max(THRESHOLD-scroll.computeVerticalScrollOffset(),0)/THRESHOLD;
+            child.setScaleY(scale);
+            child.setScaleX(scale);
         }
 
         return false;
