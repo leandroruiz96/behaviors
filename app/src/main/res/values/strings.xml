@@ -100,4 +100,5 @@
     <string name="title_activity_chained_fab">ChainedFabActivity</string>
     <string name="title_activity_coord_pager">CoordPagerActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_continuity">ContinuityActivity</string>
 </resources>
