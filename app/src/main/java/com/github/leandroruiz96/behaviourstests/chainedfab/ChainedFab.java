@@ -2,16 +2,12 @@ package com.github.leandroruiz96.behaviourstests.chainedfab;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
+import android.support.annotation.DimenRes;
 import android.support.annotation.IdRes;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.res.TypedArrayUtils;
-import android.support.v4.view.ScrollingView;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
 
 import com.github.leandroruiz96.behaviourstests.R;
 
@@ -22,6 +18,7 @@ import com.github.leandroruiz96.behaviourstests.R;
 public class ChainedFab extends FloatingActionButton {
 
     @IdRes int mLinkedFab;
+    int mChainedMargin;
 
     public ChainedFab(Context context) {
         super(context);
@@ -40,27 +37,25 @@ public class ChainedFab extends FloatingActionButton {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 
+        super.onLayout(changed, left, top, right, bottom);
+
         if (getLayoutParams() instanceof CoordinatorLayout.LayoutParams) {
 
             CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) getLayoutParams();
             ChainedFabBehavior behavior = (ChainedFabBehavior) params.getBehavior();
 
             if (getParent() instanceof CoordinatorLayout && behavior!=null) {
-                CoordinatorLayout parent = (CoordinatorLayout) getParent();
-                ChainedFab first = behavior.getFirstLinkedFAB(parent,this);
-                if (first!=this) {
-                    CoordinatorLayout.LayoutParams firstParams = (CoordinatorLayout.LayoutParams)first.getLayoutParams();
-                    top =(first.getTop()+firstParams.bottomMargin+firstParams.topMargin);
-                    right = 0;
-                    left = 0;
+                ChainedFab linked = this.getLinkedFab();
+                if (this!=linked) {
+                    this.setX(linked.getX());
+                    this.setY(linked.getY() - this.getHeight() - mChainedMargin);
                 }
             }
         }
 
-        super.onLayout(changed, left, top, right, bottom);
     }
 
-    private ChainedFab getLinkedFab() {
+    protected ChainedFab getLinkedFab() {
         if (getParent() instanceof CoordinatorLayout) {
             if (mLinkedFab != -1) {
                 ChainedFab linked = (ChainedFab) ((CoordinatorLayout) getParent()).findViewById(mLinkedFab);
@@ -71,13 +66,16 @@ public class ChainedFab extends FloatingActionButton {
         return null;
     }
 
+
     private void retrieveValues(Context context, AttributeSet attrs, int defStyleAttr) {
+        mLinkedFab = -1;
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
                 R.styleable.ChainedFab,
                 defStyleAttr, 0);
         try {
             mLinkedFab = a.getResourceId(R.styleable.ChainedFab_chain_order, -1);
+            mChainedMargin = a.getDimensionPixelSize(R.styleable.ChainedFab_chain_margin,0);
         } finally {
             a.recycle();
         }

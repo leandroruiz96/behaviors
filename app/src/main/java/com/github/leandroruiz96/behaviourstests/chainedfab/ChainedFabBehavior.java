@@ -1,20 +1,16 @@
 package com.github.leandroruiz96.behaviourstests.chainedfab;
 
 import android.content.Context;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 /**
  * Created by leandro on 6/3/17.
  */
 public class ChainedFabBehavior extends CoordinatorLayout.Behavior<ChainedFab> {
-
-    CoordinatorLayout.LayoutParams mInitialParams;
 
     public ChainedFabBehavior() {
         super();
@@ -30,9 +26,15 @@ public class ChainedFabBehavior extends CoordinatorLayout.Behavior<ChainedFab> {
     }
 
     @Override
-    public void onAttachedToLayoutParams(@NonNull CoordinatorLayout.LayoutParams params) {
-        super.onAttachedToLayoutParams(params);
-        mInitialParams = params;
+    public boolean onLayoutChild(CoordinatorLayout parent, ChainedFab child, int layoutDirection) {
+
+        ChainedFab linked = child.getLinkedFab();
+        if (child!=linked) {
+            child.setX(linked.getX());
+            child.setY(linked.getY() - child.getHeight() - child.mChainedMargin);
+        }
+
+        return super.onLayoutChild(parent, child, layoutDirection);
     }
 
     @Override
@@ -42,12 +44,12 @@ public class ChainedFabBehavior extends CoordinatorLayout.Behavior<ChainedFab> {
             AppBarLayout appbar = (AppBarLayout) dependency;
             float percent = (((float)appbar.getTotalScrollRange()+(float)appbar.getTop())/(float)appbar.getTotalScrollRange());
 
-            ChainedFab first = getFirstLinkedFAB(parent,child);
+            ChainedFab first = child.getLinkedFab();
 
             if (first != child) {
                 //I'm a linked FAB
-                float deltaY = child.getTop() - first.getTop() - ((CoordinatorLayout.LayoutParams) first.getLayoutParams()).topMargin;
-                child.setTranslationY(deltaY*percent);
+                float deltaY = child.getHeight() + child.mChainedMargin;
+                child.setY(first.getY() - (deltaY*percent));
                 return true;
             } else {
                 //I'm the first FAB
@@ -56,15 +58,5 @@ public class ChainedFabBehavior extends CoordinatorLayout.Behavior<ChainedFab> {
 
         return false;
     }
-
-    protected ChainedFab getFirstLinkedFAB(CoordinatorLayout parent, ChainedFab child) {
-        for (View dependent : parent.getDependencies(child)) {
-            if (dependent instanceof ChainedFab) {
-                return (ChainedFab) dependent;
-            }
-        }
-        return child;
-    }
-
 
 }

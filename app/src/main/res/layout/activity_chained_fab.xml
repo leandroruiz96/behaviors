@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="snap|scroll|exitUntilCollapsed">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -47,26 +47,29 @@
 
 
     <com.github.leandroruiz96.behaviourstests.chainedfab.ChainedFab
+        android:id="@+id/fab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:chain_order="@+id/fab2"
+        app:chain_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+
+    <com.github.leandroruiz96.behaviourstests.chainedfab.ChainedFab
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:chain_order="@+id/fab1"
+        app:chain_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <com.github.leandroruiz96.behaviourstests.chainedfab.ChainedFab
         android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/scroll"
         app:layout_anchorGravity="right|bottom"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-    <com.github.leandroruiz96.behaviourstests.chainedfab.ChainedFab
-        android:id="@+id/fab2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:chain_order="@id/fab1"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-    <com.github.leandroruiz96.behaviourstests.chainedfab.ChainedFab
-        android:id="@+id/fab3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:chain_order="@id/fab2"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>

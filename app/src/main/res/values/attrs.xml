@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="ChainedFab">
         <attr name="chain_order" format="reference"/>
+        <attr name="chain_margin" format="dimension"/>
     </declare-styleable>
 </resources>
