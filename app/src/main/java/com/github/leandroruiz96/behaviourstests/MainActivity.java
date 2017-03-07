@@ -12,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.github.leandroruiz96.behaviourstests.chainedfab.ChainedFabActivity;
+import com.github.leandroruiz96.behaviourstests.coordpager.CoordPagerActivity;
+import com.github.leandroruiz96.behaviourstests.snackfab.SnackFabActivity;
+import com.github.leandroruiz96.behaviourstests.tooltipview.TooltipActivity;
 import com.github.leandroruiz96.behaviourstests.zoomleft.ScrollingActivity;
 
 import java.util.ArrayList;
@@ -41,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
         ExamplesAdapter() {
             mExamples.add(new Example(ScrollingActivity.class,ScrollingActivity.DESCRIPTION));
+            mExamples.add(new Example(SnackFabActivity.class,SnackFabActivity.DESCRIPTION));
+            mExamples.add(new Example(TooltipActivity.class,TooltipActivity.DESCRIPTION));
+            mExamples.add(new Example(ChainedFabActivity.class,ChainedFabActivity.DESCRIPTION));
+            mExamples.add(new Example(CoordPagerActivity.class,CoordPagerActivity.DESCRIPTION));
         }
 
         @Override

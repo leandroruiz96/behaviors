@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChainedFab">
+        <attr name="chain_order" format="reference"/>
+        <attr name="chain_margin" format="dimension"/>
+    </declare-styleable>
+</resources>
