@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.leandroruiz96.behaviourstests.chainedfab.ChainedFabActivity;
+import com.github.leandroruiz96.behaviourstests.continuitypager.ContinueLineView;
+import com.github.leandroruiz96.behaviourstests.continuitypager.ContinuityActivity;
 import com.github.leandroruiz96.behaviourstests.coordpager.CoordPagerActivity;
 import com.github.leandroruiz96.behaviourstests.snackfab.SnackFabActivity;
 import com.github.leandroruiz96.behaviourstests.tooltipview.TooltipActivity;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             mExamples.add(new Example(TooltipActivity.class,TooltipActivity.DESCRIPTION));
             mExamples.add(new Example(ChainedFabActivity.class,ChainedFabActivity.DESCRIPTION));
             mExamples.add(new Example(CoordPagerActivity.class,CoordPagerActivity.DESCRIPTION));
+            mExamples.add(new Example(ContinuityActivity.class,ContinuityActivity.DESCRIPTION));
         }
 
         @Override

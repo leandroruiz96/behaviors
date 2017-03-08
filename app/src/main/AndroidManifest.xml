@@ -51,6 +51,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.github.leandroruiz96.behaviourstests.MainActivity" />
         </activity>
+        <activity
+            android:name=".continuitypager.ContinuityActivity"
+            android:label="@string/title_activity_continuity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.github.leandroruiz96.behaviourstests.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
