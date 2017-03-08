@@ -15,7 +15,7 @@ import android.view.View;
 @CoordinatorLayout.DefaultBehavior(ContinueLineBehavior.class)
 public class ContinueLineView extends View {
 
-    private static final float CIRCLE_RADIUS = 20f;
+    private static final float CIRCLE_RADIUS = 45f;
 
     private Paint paint;
     private Paint circlePaint;
@@ -28,7 +28,7 @@ public class ContinueLineView extends View {
         paint  = new Paint();
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(3f);
+        paint.setStrokeWidth(30f);
         paint.setAntiAlias(true);
 
         circlePaint = new Paint();
@@ -70,18 +70,34 @@ public class ContinueLineView extends View {
             float cx = bounds.right - deltaX;
             float cy = bounds.top + CIRCLE_RADIUS + deltaY;
             canvas.drawCircle(cx,cy,CIRCLE_RADIUS,circlePaint);
+
+            if (cx >= getWidth() - CIRCLE_RADIUS) {
+                float cxo = bounds.left - deltaX;
+                float cyo = bounds.bottom - CIRCLE_RADIUS + deltaY;
+                canvas.drawCircle(cxo,cyo,CIRCLE_RADIUS,circlePaint);
+            }
+
+            if (cx <= CIRCLE_RADIUS) {
+                float cxo = bounds.right * 2 - deltaX;
+                float cyo = (bounds.top + 3*CIRCLE_RADIUS - getHeight()) + deltaY;
+                canvas.drawCircle(cxo,cyo,CIRCLE_RADIUS,circlePaint);
+            }
         }
 
         super.onDraw(canvas);
     }
 
     public void setDeltaX(float deltaX) {
-        while (deltaX<0) deltaX += getWidth();
+        while (deltaX>=getWidth()) deltaX -= getWidth();
         this.deltaX = deltaX;
     }
 
     public void setDeltaY(float deltaY) {
-        while (deltaY>getHeight()) deltaY -= getHeight() + CIRCLE_RADIUS;
+        while (deltaY>=getHeight() - 2 * CIRCLE_RADIUS) deltaY -= getHeight() - 2 * CIRCLE_RADIUS;
         this.deltaY = deltaY;
+    }
+
+    public float getPendent() {
+        return (getHeight() - 2 * CIRCLE_RADIUS) / (float) getWidth();
     }
 }

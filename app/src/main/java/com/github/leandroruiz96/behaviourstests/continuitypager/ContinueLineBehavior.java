@@ -38,7 +38,6 @@ public class ContinueLineBehavior extends CoordinatorLayout.Behavior<ContinueLin
 
 
     private float interpolatingFunction(ContinueLineView view, int scroll) {
-        float pendent = (float) view.getHeight() / (float) view.getWidth();
-        return - scroll * pendent;
+        return - scroll * view.getPendent();
     }
 }
