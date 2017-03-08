@@ -88,11 +88,13 @@ public class ContinueLineView extends View {
     }
 
     public void setDeltaX(float deltaX) {
+        if (isInEditMode()) return;
         while (deltaX>=getWidth()) deltaX -= getWidth();
         this.deltaX = deltaX;
     }
 
     public void setDeltaY(float deltaY) {
+        if (isInEditMode()) return;
         while (deltaY>=getHeight() - 2 * CIRCLE_RADIUS) deltaY -= getHeight() - 2 * CIRCLE_RADIUS;
         this.deltaY = deltaY;
     }

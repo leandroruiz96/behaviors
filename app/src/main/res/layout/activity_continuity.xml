@@ -47,5 +47,12 @@
         android:layout_marginBottom="@dimen/fab_margin"
         app:layout_anchor="@id/container"
         app:layout_anchorGravity="bottom" />
+    
+    <com.github.leandroruiz96.behaviourstests.continuitypager.SineLineView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_anchor="@id/container"
+        app:layout_anchorGravity="center_vertical|left"/>
 
 </android.support.design.widget.CoordinatorLayout>
+
