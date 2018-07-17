@@ -27,7 +27,7 @@ For this one, I created a little more complex custom view extending FloatingActi
 
 ## ViewPager Progress
 
-One of the simplest yet common animation is this one. A ProgressBar that reacts on ViewPager scroll events.
+One of the simplest yet common animations is this one. A ProgressBar that reacts on ViewPager scroll events.
 
 ![ViewPagerProgress](https://i.imgur.com/yaeaLfU.gif)
 
