@@ -21,13 +21,13 @@ Extending a TextView, I assigned a default behavior for the tooltip to dismiss i
 
 ## Chained FABs
 
-I created a little more complex custom view extending FloatingActionButton, which expects to have a CoordinatorLayout as parent and a reference to another ChainedFab. The result is somewhat mesmerizing.
+For this one, I created a little more complex custom view extending FloatingActionButton, which expects to have a CoordinatorLayout as parent and a reference to another ChainedFab. The result is somewhat mesmerizing.
 
 ![ChainFAB](https://i.imgur.com/3RYHM3r.gif)
 
 ## ViewPager Progress
 
-One of the simplest yet common is this one. A ProgressBar that reacts on ViewPager scroll events.
+One of the simplest yet common animation is this one. A ProgressBar that reacts on ViewPager scroll events.
 
 ![ViewPagerProgress](https://i.imgur.com/yaeaLfU.gif)
 
