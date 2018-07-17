@@ -5,7 +5,7 @@ A list of simple [CoordinatorLayout.Behavior](https://developer.android.com/refe
 
 Just a linear interpolator can do a great job animating a FloatingActionButton.
 
-![Zoom Out FAB](https://i.imgur.com/oQAybTm.gif)
+![Zoom Out FAB](https://i.imgur.com/G0HI1wr.gif)
 
 ## SnackBar & FAB
 
