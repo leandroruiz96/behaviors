@@ -1,5 +1,5 @@
 # Android Behaviors
-A list of simple [CoordinatorLayout.Behavior](https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior) examples showing how to achieve nice interactions with the user with just a few lines of code.
+A list of simple [CoordinatorLayout.Behavior](https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior) examples showing how to achieve nice interactions with the user in just a few lines of code.
 
 ## Zoom out FAB
 
@@ -15,7 +15,7 @@ Here I try to replicate the default FAB interaction with the SnackBar, but I add
 
 ## Custom Tooltip
 
-Extending a TextView, I assigned a default behavior for the tooltip to dismiss when scrolling.
+Extending a TextView, I assigned a default behavior for the tooltip to dismiss it when scrolling.
 
 ![Tooltip](https://i.imgur.com/iuYzUSU.gif)
 
@@ -33,7 +33,7 @@ One of the simplest yet common is this one. A ProgressBar that reacts on ViewPag
 
 ## Continuity Lines
 
-I wanted to show that you can create whatever relationship you can imagine, so I made two custom views that reacts to the ViewPager's scroll events in order to make you feel continuity between fragments, and with just one view on top of it.
+I wanted to show that you can create whatever relationship you can imagine, so I made two custom views that react to the ViewPager's scroll events in order to make you feel continuity between fragments, and with just one view on top of it.
 
 ![Lines](https://i.imgur.com/0C2lb85.gif)
 
